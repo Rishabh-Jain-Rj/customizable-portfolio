@@ -1,53 +1,80 @@
 import React from "react";
-import { BsLinkedin } from "react-icons/bs";
-import { BsYoutube } from "react-icons/bs";
-import { FaSquareEnvelope } from "react-icons/fa6";
+import { BsMoonStarsFill } from "react-icons/bs";
+import { FaLinkedin } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
+import { BsBrowserChrome } from "react-icons/bs";
+import { RiInstagramFill } from "react-icons/ri";
+import { FaYoutube } from "react-icons/fa";
+import blankProfile from '../assets/blank_profile.webp'
 
-const HeroSection = () => {
+const HeroSection = ({ darkMode, setDarkMode, about,contact }) => {
   return (
     <>
-      <section class="p-10 text-center">
-        <h3 className="md:text-5xl text-2xl py-2 text-teal-500">
-          Cool Programming Projects
-        </h3>
-        <p className="md:text-2xl text-xl font-semibold py-2 text-neutral-800 dark:text-white">
-          Mern Stack Developer
-        </p>
-        <p className="text-md text-gray-600 max-w-xl mx-auto dark:text-gray-400">
-          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam
-          laudantium doloremque quod vel repellendus eos porro? Quisquam minus,
-          delectus adipisci, nulla veritatis enim odit, dicta impedit qui
-          repellat sunt inventore?
-        </p>
-        <div className="flex justify-center text-gray-600 md:text-5xl text-3xl gap-10 my-5 dark:text-white">
-          <BsLinkedin />
-          <BsYoutube />
-          <FaSquareEnvelope />
-        </div>
-        <div className="mx-auto relative mt-10 rounded-full w-48 h-48 md:w-80 md:h-80 overflow-hidden bg-gradient-to-b from-cyan-500 to-teal-500">
-          <img
-            src="https://res.cloudinary.com/dtws0vjlb/image/upload/v1689062624/avtars/cd4ihz1spsjg2jpwejqi.png"
-            className="object-cover"
-            alt=""
-          />
-        </div>
-      </section>
-      <section className=" py-10">
-        <div className="grid md:grid-cols-3 gap-10">
-          <div className="text-center rounded-lg dark:bg-gray-800 shadow-lg p-10 ">
-            <p className="text-xl text-gray-950 dark:text-white font-semibold">Frontend Developer</p>
-            <p className="text-gray-600 text-sm dark:text-gray-400 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora at cumque nostrum similique fugiat, provident repudiandae voluptas sunt ipsa?</p>
+        <div class="flex justify-between p-5 shadow-sm bg-white dark:bg-neutral-800 rounded-lg">
+          <div className="flex-row gap-4 flex items-center">
+            <div
+              className={`rounded-full bg-primary dark:border-white border-gray-700 overflow-hidden border-2 `}
+            >
+              <img
+                src={about.profile_url?about.profile_url:blankProfile}
+                className="w-20 h-20 object-cover object-center "
+                alt=""
+              />
+            </div>
+            <div>
+              {
+                about.name &&
+              <h1 className="font-bold md:text-3xl text-xl">{about.name}</h1>
+              }
+              {
+                about.description &&
+              <h2 className="text-sm text-gray-700  dark:text-gray-300 ">
+                {about.description}
+              </h2>
+              }
+
+              {
+                contact &&
+              <div className="flex gap-2 mt-1 text-lg text-gray-800  dark:text-gray-200 ">
+                {contact.linkedin && (
+                  <a href={contact.linkedin} rel="noreferrer"  target="_blank">
+                    <FaLinkedin />
+                  </a>
+                )}
+                {contact.email && (
+                  <a href={`mailto:${contact.email}`} rel="noreferrer"  target="_blank">
+                    <MdEmail />
+                  </a>
+                )}
+                {contact.website && (
+                  <a href={contact.website}rel="noreferrer"  target="_blank">
+                    <BsBrowserChrome />
+                  </a>
+                )}
+                {contact.instagram && (
+                  <a href={contact.instagram} rel="noreferrer" target="_blank">
+                    <RiInstagramFill />
+                  </a>
+                )}
+                {contact.youtube && (
+                  <a href={contact.youtube} rel="noreferrer" target="_blank">
+                    <FaYoutube />
+                  </a>
+                )}
+              </div>
+              }
+            </div>
           </div>
-          <div className="text-center rounded-lg dark:bg-gray-800  shadow-lg  p-10 ">
-            <p className="text-xl text-gray-950 dark:text-white font-semibold">Backend Developer</p>
-            <p className="text-gray-600 text-sm dark:text-gray-400 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora at cumque nostrum similique fugiat, provident repudiandae voluptas sunt ipsa?</p>
-          </div>
-          <div className="text-center rounded-lg dark:bg-gray-800 shadow-lg  p-10 ">
-            <p className="text-xl text-gray-950 dark:text-white font-semibold">UI/UX Designer</p>
-            <p className="text-gray-600 dark:text-gray-400 text-sm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque tempora at cumque nostrum similique fugiat, provident repudiandae voluptas sunt ipsa?</p>
-          </div>
+          <button
+            className=""
+            onClick={() => {
+              setDarkMode(!darkMode);
+            }}
+          >
+            <BsMoonStarsFill />
+          </button>
         </div>
-      </section>
+     
     </>
   );
 };
