@@ -10,7 +10,7 @@ import blankProfile from '../assets/blank_profile.webp'
 const HeroSection = ({ darkMode, setDarkMode, about,contact }) => {
   return (
     <>
-        <div class="flex justify-between p-5 shadow-sm bg-white dark:bg-neutral-800 rounded-lg">
+        <div className="flex justify-between p-5 shadow-sm bg-white dark:bg-neutral-800 rounded-lg">
           <div className="flex-row gap-4 flex items-center">
             <div
               className={`rounded-full bg-primary dark:border-white border-gray-700 overflow-hidden border-2 `}

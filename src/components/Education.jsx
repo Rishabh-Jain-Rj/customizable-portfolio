@@ -10,7 +10,7 @@ const Education = ({ qualifications }) => {
       </div>
       <div className="flex flex-col gap-4">
         {qualifications?.map((item, index) => (
-          <div className="card p-5 h-full bg-white dark:bg-neutral-800  rounded-lg cursor-pointer  overflow-hidden shadow-sm">
+          <div className="card p-5 h-full bg-white dark:bg-neutral-800  rounded-lg cursor-pointer  overflow-hidden shadow-sm" key={index}>
 
             <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
               {item.institute_name}

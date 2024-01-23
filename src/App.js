@@ -9,7 +9,7 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   return (
     <div className={`App  ${darkMode ? "dark" : ""}`}>
-      <div className="p-5 bg-gray-100 min-w-screen  dark:bg-neutral-950 dark:text-white text-gray-900 min-h-screen">
+      <div className="p-5 bg-gray-100 min-w-screen  dark:bg-neutral-950 dark:text-white text-gray-800 min-h-screen">
         <HeroSection
           darkMode={darkMode}
           setDarkMode={setDarkMode}
@@ -22,7 +22,6 @@ function App() {
             <Education qualifications={portfolioData.qualifications} />
           </div>
           <div>
-
           <Projects projects={portfolioData.projects} />
           </div>
           <div>

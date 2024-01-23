@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+
 import { FaLink } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import React from "react";
@@ -13,7 +13,7 @@ const Projects = ({ projects }) => {
       </div>
       <div className="flex flex-col gap-5 ">
         {projects?.map((item, index) => (
-          <div className="card  rounded-lg cursor-pointer  overflow-hidden shadow-sm">
+          <div key={index}className="card  rounded-lg cursor-pointer  overflow-hidden shadow-sm">
             <img
               src={item.img_url}
               className="w-full object-cover object-center aspect-video"
@@ -24,21 +24,27 @@ const Projects = ({ projects }) => {
               <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
                 {item.name}
               </h3>
+              {
+                item.description &&
+              <p className="text-xs font-semibold text-gray-700 dark:text-gray-400">
+                {item.description}
+              </p>
+              }
               <p className="md:text-sm text-xs  text-gray-700 dark:text-gray-400">
                 {item.stack?.map((stack) => (
-                  <>{stack}, </>
+                  <span key={stack}>{stack}, </span>
                 ))}
               </p>
                      
               <div className="flex flex-row gap-3 text-sm mt-2  text-gray-700 dark:text-gray-400">
                 {item.project_url && (
-                  <a href={item.project_url} target="_blank">
+                  <a href={item.project_url} rel="noreferrer"  target="_blank">
                     <FaLink />
                   </a>
                 )}
                 {
                   item.video_url &&
-                  <a href={item.video_url} target="_blank">
+                  <a href={item.video_url} rel="noreferrer" target="_blank">
                   <FaYoutube />
                 </a>
                 }

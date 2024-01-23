@@ -1,4 +1,3 @@
-
 module.exports = {
   darkMode:"class",
   content: [
@@ -9,7 +8,6 @@ module.exports = {
     extend: {
       colors:{
         primary:"#3b82f6",
-       
       },
     },
   },

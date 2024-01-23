@@ -10,14 +10,14 @@ const Experience = ({ experiences }) => {
       </div>
       <div className="flex flex-col gap-5 ">
         {experiences?.map((item, index) => (
-          <div className="card p-5 h-full bg-white dark:bg-neutral-800  rounded-lg cursor-pointer  overflow-hidden shadow-sm">
+          <div key={index} className="card p-5 h-full bg-white dark:bg-neutral-800  rounded-lg cursor-pointer  overflow-hidden shadow-sm">
             <h3 className="text-lg font-semibold text-gray-700 dark:text-gray-200">
               {item.job_title}
             </h3>
-            <h4 className="md:text-sm text-md   text-gray-700 dark:text-gray-400">
+            <h4 className="md:text-sm text-md  my-1 text-gray-700 dark:text-gray-400">
               {item.company_name}
             </h4>
-            <p className="text-xs text-gray-700 dark:text-gray-400">
+            <p className="text-xs text-gray-700 my-1 dark:text-gray-400">
               {item.start_date} - {item.end_date}
             </p>
             <p className="text-xs my-1  text-gray-700 dark:text-gray-400">
