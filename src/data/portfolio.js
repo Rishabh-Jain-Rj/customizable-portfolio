@@ -1,10 +1,10 @@
 import project1 from "../../src/assets/project1.png";
 import project2 from "../../src/assets/project2.png";
+import profile from "../../src/assets/profile.png";
 
 const data = {
   about: {
-    profile_url:
-      "https://www.coolprogrammingprojects.live/static/media/logo.5837d8bfc873e6cc3f01.png",
+    profile_url: profile,
     name: "Rishabh Jain RJ",
     description: "MERN Stack Developer",
   },
@@ -17,52 +17,52 @@ const data = {
   },
   skills: [
     {
-      name:"HTML",
-      color:"#f97316",
+      name: "HTML",
+      color: "#f97316",
     },
     {
-      name:"CSS",
-      color:"#06b6d4",
+      name: "CSS",
+      color: "#06b6d4",
     },
     {
-      name:"Javascript",
-      color:"#eab308",
+      name: "Javascript",
+      color: "#eab308",
     },
     {
-      name:"Boostrap",
-      color:"#8713F2",
+      name: "Boostrap",
+      color: "#8713F2",
     },
     {
-      name:"Tailwind",
-      color:"#38BDF8",
+      name: "Tailwind",
+      color: "#38BDF8",
     },
     {
-      name:"React Js",
-      color:"#5ED3F3",
+      name: "React Js",
+      color: "#5ED3F3",
     },
     {
-      name:"Node Js",
-      color:"#85B557",
+      name: "Node Js",
+      color: "#85B557",
     },
     {
-      name:"Express Js",
-      color:"#78716c",
+      name: "Express Js",
+      color: "#78716c",
     },
     {
-      name:"MongoDB",
-      color:"#00ED64",
+      name: "MongoDB",
+      color: "#00ED64",
     },
     {
-      name:"AWS",
-      color:"#EC7211",
+      name: "AWS",
+      color: "#EC7211",
     },
   ],
   projects: [
     {
       name: "Ecommerce + Portfolio",
-      description:"",
+      description: "",
       stack: ["Nodejs", "ReactJs", "MongoDB", "Razorpay"],
-      img_url: project1, 
+      img_url: project1,
       project_url: "https://www.coolprogrammingprojects.live/",
       video_url: "https://www.youtube.com/watch?v=0cAPHh-_uD8",
     },

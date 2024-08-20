@@ -4,7 +4,7 @@ const Experience = ({ experiences }) => {
   return (
     <div>
       <div className="inline-block mb-4">
-        <h3 className="md:text-2xl text-xl px-5 py-2 font-bold border-s-4 border-primary heading text-primary">
+        <h3 className="md:text-2xl dark:border-secondary dark:text-secondary text-xl px-5 py-2 font-bold border-s-4 border-primary heading text-primary">
           Experiences
         </h3>
       </div>
